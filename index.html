@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="icon" href="./imgs/bookmark.png">
+    <!-- Righteous font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <!--PT Sans Caption Static font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <!-- font pacifico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- main style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="parent">
+        <div class="container py-5 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="position-relative py-2 ">Bookmarker</h1>
+            <div class="bookmark-body w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4 ">
+                <h2 class="bg-info"><i class="fa-solid fa-bookmark"></i> Bookmark Your Sites <i class="fa-solid fa-bookmark"></i></h2>
+
+                <div class="w-100 d-flex flex-column justify-content-center">
+                  <label for="siteName" class="pb-2 fw-bold"><i class="fa-solid fa-book-bookmark"></i> Site Name</label>
+                  <input type="text" class="form-control" oninput="validate(nameRegex,siteName)" id="siteName" aria-describedby="nameHelp">
+                  <div id="nameHelp" class="form-text m-1 d-none"><i class="fa-solid fa-triangle-exclamation"></i> Name must be 3 characters or more.</div>
+                </div>
+                
+                <div class="w-100 d-flex flex-column justify-content-center">
+                  <label for="siteUrl" class="pb-2 fw-bold"><i class="fa-solid fa-link"></i> Site URL</label>
+                  <input type="email" class="form-control" oninput="validate(urlRegex,siteUrl)" id="siteUrl" aria-describedby="urlHelp">
+                  <div id="urlHelp" class="form-text m-1 d-none"><i class="fa-solid fa-triangle-exclamation"></i> The URL must be a valid link.</div>
+                </div>
+                    
+                    
+                <button type="submit" class="btn btn-submit px-5" onclick="addUrl()">Submit</button>
+                
+            </div>
+            <table class="table mt-4 text-center bg-light">
+                <thead>
+                    <tr>
+                        <th class="text-capitalize">index</th>
+                        <th class="text-capitalize">website name</th>
+                        <th class="text-capitalize">visit</th>
+                        <th class="text-capitalize">delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableContent"></tbody>
+            </table>
+        </div>
+
+  
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                 <div>
+                    <i class="fa-solid fa-circle" style="color: #f15f5d;"></i>
+                    <i class="fa-solid fa-circle" style="color: #febe2e;"></i>
+                    <i class="fa-solid fa-circle" style="color: #4db748;"></i>
+                 </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"> 
+                    <p class="fw-bold fs-5">Site Name or Url is not valid, Please follow the rules below :</p>
+                    
+                    <p class="fw-lighter"><i class="fa-regular fa-circle-right" style="color: #bd0a13;"></i> Site name must contain at least 3 characters</p>
+                        
+                    <p class="fw-lighter"><i class="fa-regular fa-circle-right" style="color: #bd0a13;"></i> Site URL must be a valid one</p>
+                        
+                    
+                    
+                </div>
+                
+            </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
