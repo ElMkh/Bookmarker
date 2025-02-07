@@ -4,11 +4,17 @@ body{
     font-style: normal;
 }
 
+
 .parent{
     min-height: 100vh;
     background-color: #f7ecde;
 }
-
+.footer{
+    background-color: #fec260;
+}
+.footer p {
+    font-family: "Pacifico", cursive;
+}
 .container h1{
     font-family: "Pacifico", cursive;
     font-size: 50px;
@@ -85,4 +91,8 @@ body{
 
 ul li {
     list-style: none;
+}
+
+.cursor{
+    cursor: pointer;
 }
